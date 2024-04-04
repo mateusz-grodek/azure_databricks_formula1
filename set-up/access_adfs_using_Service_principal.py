@@ -1,5 +1,4 @@
 # Databricks notebook source
-# MAGIC
 # MAGIC %md
 # MAGIC ### Access Azure Data Lake using Service Principal
 # MAGIC #### Steps to follow
