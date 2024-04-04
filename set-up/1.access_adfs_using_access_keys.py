@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-
+formula1dl_account_key = dbutils.secrets.get(scope = 'formula1-scope', key = 'formula1dl-account-key')
 
 # COMMAND ----------
 
