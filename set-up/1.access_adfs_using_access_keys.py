@@ -7,15 +7,15 @@
 
 # COMMAND ----------
 
-formula1dl_account_key = dbutils.secrets.get(scope = 'formula1-scope', key = 'formula1dl-account-key')
+spark.conf.set("fs.azure.account.key.databricksdlmg.dfs.core.windows.net","account_key_to paste")
 
 # COMMAND ----------
 
-
+display(dbutils.fs.ls("abfss://raw@databricksdlmg.dfs.core.windows.net"))
 
 # COMMAND ----------
 
-
+display(spark.read.csv("abfss://raw@databricksdlmg.dfs.core.windows.net/circuits.csv"))
 
 # COMMAND ----------
 
