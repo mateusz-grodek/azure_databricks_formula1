@@ -1,14 +1,15 @@
 # Databricks notebook source
-# MAGIC  %md
-# MAGIC  ### Mount Azure Data Lake using Service Principal
-# MAGIC  #### Steps to follow
-# MAGIC  1. Get client_id, tenant_id and client_secret from key vault
-# MAGIC  2. Set Spark Config with App/ Client Id, Directory/ Tenant Id & Secret
-# MAGIC  3. Call file system utlity mount to mount the storage
-# MAGIC  4. Explore other file system utlities related to mount (list all mounts, unmount)
+# MAGIC %md
+# MAGIC ### Mount Azure Data Lake using Service Principal
+# MAGIC #### Steps to follow
+# MAGIC 1. Get client_id, tenant_id and client_secret from key vault
+# MAGIC 2. Set Spark Config with App/ Client Id, Directory/ Tenant Id & Secret
+# MAGIC 3. Call file system utlity mount to mount the storage
+# MAGIC 4. Explore other file system utlities related to mount (list all mounts, unmount)
 
 # COMMAND ----------
 
+#Function to mount container
 def mount_adls(storage_account_name,container_name):
     # get secret from Key Voult
     client_id = dbutils.secrets.get('formula1-secret','formula1-secret-client-id')
@@ -39,8 +40,6 @@ display(dbutils.fs.mounts())
 dbutils.fs.unmount(f"/mnt/databricksdlmg/proccess")
 
 # COMMAND ----------
-
-
 
 mount_adls('databricksdlmg', 'raw')
 mount_adls('databricksdlmg', 'processed')

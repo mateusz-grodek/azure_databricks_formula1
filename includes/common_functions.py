@@ -42,6 +42,7 @@ def df_column_to_list(input_df, column_name):
 
 # COMMAND ----------
 
+#update data using delta marge
 def merge_delta_data(input_df, db_name, table_name, folder_path, merge_condition, partition_column):
   spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning","true")
 
