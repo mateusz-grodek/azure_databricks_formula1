@@ -1,17 +1,9 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC ### Access Azure Data Lake using Service Principal
-# MAGIC #### Steps to follow
-# MAGIC #####1. Register Azure AD Application / Service Principal
-# MAGIC #####2. Generate a secret/ password for the Application
-# MAGIC #####3. Set Spark Config with App/ Client Id, Directory/ Tenant Id & Secret
-# MAGIC #####4. Assign Role 'Storage Blob Data Contributor' to the Data Lake. 
 
 # COMMAND ----------
 
-# client_id = "App id from app registration"
-# tenant_id ="tenet id from app registration"
-# client_secret = "secrets from app registration"
 client_id = dbutils.secrets.get('formula1-secret','formula1-secret-client-id')
 client_secret = dbutils.secrets.get('formula1-secret','formula1-secret-client-secret')
 tenant_id=  dbutils.secrets.get('formula1-secret','formula1-secret-tenant-id')
