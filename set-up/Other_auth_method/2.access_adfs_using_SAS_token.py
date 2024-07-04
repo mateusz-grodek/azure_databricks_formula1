@@ -1,9 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC #### Access Azure Data Lake using sas token
-# MAGIC 1. Set the spark config for sas token
-# MAGIC 1. List files from demo container
-# MAGIC 1. Read data from csv file
 
 # COMMAND ----------
 
